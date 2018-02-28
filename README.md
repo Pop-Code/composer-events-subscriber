@@ -13,8 +13,8 @@ Or using yarn
 ## Purpose
 Composer create for us a set of transactions to make CRUD operations on assets and participants.
 For now, it's not possible to listen for events from those transactions without using the native api.
-This module connect to an eventHub from your hyperledger fabric network, and listen for all transactions that are submitted.
-It dispatch all events that you can listen to do what you need.
+This module connects to an eventHub from your hyperledger fabric network, and listens for all transactions that are submitted.
+It dispatchs all events that you can listen to do what you need.
 
 
 ## Infos
