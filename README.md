@@ -1,5 +1,14 @@
 # composer-events-subscriber
 
+## Purpose
+Composer create for us a set of transactions to make CRUD operations on assets and participants.
+For now, it's not possible to listen for events from those transactions without using the native api.
+This module connects to an eventHub from your hyperledger fabric network, and listens for all transactions that are submitted.
+It dispatchs all events that you can listen to do what you need.
+
+## Infos
+The class Subscriber extends the node js EventEmitter from events module
+
 ## install 
 
 Using npm
@@ -9,16 +18,6 @@ Using npm
 Or using yarn
 
 `yarn add composer-events-subscriber`
-
-## Purpose
-Composer create for us a set of transactions to make CRUD operations on assets and participants.
-For now, it's not possible to listen for events from those transactions without using the native api.
-This module connects to an eventHub from your hyperledger fabric network, and listens for all transactions that are submitted.
-It dispatchs all events that you can listen to do what you need.
-
-
-## Infos
-The class Subscriber extends the node js EventEmitter from events module
 
 ## Usage
 
