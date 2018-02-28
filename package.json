@@ -1,0 +1,21 @@
+{
+  "name": "composer-subscriber",
+  "version": "1.0.0",
+  "description": "Subscribe to business network events (native events included)",
+  "main": "build/index.js",
+  "repository": "https://github.com/Pop-Code/composer-subscriber.git",
+  "author": "alex.hermann@pop-code.com",
+  "license": "MIT",
+  "scripts": {
+    "build": "./node_modules/.bin/babel src -d build"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "dependencies": {
+    "debug": "^3.1.0"
+  }
+}
