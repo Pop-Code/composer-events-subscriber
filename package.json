@@ -1,9 +1,9 @@
 {
-  "name": "composer-subscriber",
+  "name": "composer-events-subscriber",
   "version": "1.0.0",
   "description": "Subscribe to business network events (native events included)",
   "main": "build/index.js",
-  "repository": "https://github.com/Pop-Code/composer-subscriber.git",
+  "repository": "https://github.com/Pop-Code/composer-events-subscriber.git",
   "author": "alex.hermann@pop-code.com",
   "license": "MIT",
   "scripts": {

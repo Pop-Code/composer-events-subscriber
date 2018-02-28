@@ -1,14 +1,14 @@
-# composer-subscriber
+# composer-events-subscriber
 
 ## install 
 
 Using npm
 
-`npm install composer-subscriber --save`
+`npm install composer-events-subscriber --save`
 
 Or using yarn
 
-`yarn add composer-subscriber`
+`yarn add composer-events-subscriber`
 
 ## Purpose
 Composer create for us a set of transactions to make CRUD operations on assets and participants.
@@ -25,7 +25,7 @@ The class Subscriber extends the node js EventEmitter from events module
 ### Listen for all transactions
 
 ```js
-import Subscriber from 'composer-subscriber'
+import Subscriber from 'composer-events-subscriber'
 
 //connect to the business network using the composer-client
 businessNetwork.connect('cardName').then((invokedTx, historianTx) => {
@@ -45,7 +45,7 @@ businessNetwork.connect('cardName').then((invokedTx, historianTx) => {
 
 ### Listen for named transactions
 ```js
-import Subscriber from 'composer-subscriber'
+import Subscriber from 'composer-events-subscriber'
 
 //connect to the business network using the composer-client
 businessNetwork.connect('cardName').then(=> {
