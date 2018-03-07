@@ -1,14 +1,21 @@
 {
   "name": "composer-events-subscriber",
-  "version": "1.0.0",
-  "description": "Subscribe to business network events (native events included)",
+  "version": "1.0.1",
+  "description": "Subscribe to business network events",
   "main": "build/index.js",
   "repository": "https://github.com/Pop-Code/composer-events-subscriber.git",
-  "author": "alex.hermann@pop-code.com",
-  "license": "MIT",
+  "author": "Alex Herman <alex.hermann@pop-code.com>",
+  "license": "Apache-2.0",
   "scripts": {
     "build": "./node_modules/.bin/babel src -d build"
   },
+  "keywords": [
+    "blockchain",
+    "hyperledger",
+    "events",
+    "listener",
+    "composer"
+  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.2",
