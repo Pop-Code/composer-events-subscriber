@@ -16,7 +16,7 @@ export default class Subscriber extends EventEmitter {
         super()
         this.businessNetworkConnection = businessNetworkConnection
         this.businessNetworkName = businessNetworkConnection.card.getBusinessNetworkName()
-        this.debug = Debug('composer-listener:' + this.businessNetworkName)
+        this.debug = Debug('composer:listener-' + this.businessNetworkName)
     }
 
     /**
@@ -45,17 +45,22 @@ export default class Subscriber extends EventEmitter {
 
         //register the listener
         this.debug('Starting subscriber')
-        this._listener = eventHub.registerChaincodeEvent(this.businessNetworkName, 'composer', this.dispatch.bind(this))
+        this._listener = eventHub.registerBlockEvent(this.onBlock.bind(this), this.onError.bind(this))
 
         //unscubscribe
-        return () => eventHub.unregisterChaincodeEvent(this._listener)
+        return () => eventHub.unregisterBlockEvent(this._listener)
     }
 
-    async dispatch(event) {
+    async onError(error) {
+        this.debug('Error', error)
+        this.emit('error', error)
+    }
+
+    async onBlock(block) {
         try {
-            const { tx_id, payload } = event
+            const tx_id = block.data.data[0].payload.header.channel_header.tx_id
             const serializer = this.businessNetworkConnection.businessNetwork.getSerializer()
-            this.debug('Receive event %s', tx_id)
+            this.debug('Receive event %s', tx_id, JSON.stringify(block))
 
             //get the complete tx from historian
             const historianRegistry = await this.businessNetworkConnection.getHistorian()
